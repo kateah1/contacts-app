@@ -21,7 +21,7 @@ $("button").click(function() {
 
 // only append if required fields filled out
 function addContact() {
-	var reqFields = lastName.val()!='' || phoneNumber.val()!='';
+	var reqFields = lastName.val()!='' && phoneNumber.val()!='';
 	if(reqFields) {
 		var contactName = $("#First-name").val() + " " + $("#Last-name").val();
 		$("ul").append("<li>" + contactName + "</li>");
@@ -54,7 +54,12 @@ $("li").click(function () {
 
 
 function displayContact(contacts) {
-
+	contacts.firstName,
+	contacts.lastName,
+	contacts.phoneNumber,
+	contacts.street,
+	contacts.city,
+	contacts.state,
 }
 
 
