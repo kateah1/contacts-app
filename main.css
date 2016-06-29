@@ -1,0 +1,63 @@
+body {
+	font-family: 'Raleway', sans-serif;
+}
+.fa-book {
+	color: orange;
+}
+h1 {
+	text-align: center;
+	font-size: 3em;
+}
+
+div {
+	width: 500px;
+	margin-left: 20px;
+	display: inline-block;
+}
+h2 {
+	font-size: 2.2em;
+}
+#form {
+	font-size: 1.5em;
+}
+#form input {
+	border: 1px solid orange;
+	border-radius: 5px;
+	padding: 5px;
+	width: 180px;
+	height: 20px;
+	font-size: .7em;
+}
+#add {
+	font-size: 1.2em;
+	background-color: orange;
+	border-radius: 5px;
+	padding: 10px;
+	width: 80px;
+	height: 40px;
+	border: none;
+	font-family: 'Raleway', sans-serif;
+}
+#add:hover {
+	cursor: pointer;
+	background-color: #E82C0C;
+}
+div ul li {
+	list-style: none;
+}
+div ul li:hover {
+	cursor: pointer;
+	text-decoration: underline;
+}
+
+#contactInfo {
+	display: inline-block;
+	float: right;
+	margin: 20px 70px;
+}
+#contactInfo h1 {
+	font-size: 2em;
+}
+#contactInfo p {
+	font-size: 1em;
+}

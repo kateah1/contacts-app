@@ -4,20 +4,27 @@
 	<meta charset="UTF-8">
 	<title>Document</title>
 	<link rel="stylesheet" type="text/css" href="main.css">
+	<link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css" rel="stylesheet" type="text/css"/>
+	<link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>
 </head>
 <body>
-	<h1>Contacts</h1>
-	<h2>Add a contact:</h2>
-	<form>
-		<p> First name <br><input type='text' id="First-name"></p>
-		<p> Last name * <br><input type='text' id="Last-name"></p>
-		<p> Phone Number * <br><input type='text' id="Phone-number"></p>
-		<p> Street <br><input type='text' id="Street"></p>
-		<p> City <br><input type='text' id="City"></p>
-		<p> State <br><input type='text' id="State"></p>
-	</form>
-	<button>Add</button>
-	<ul></ul>
+	<h1><i class="fa fa-book fa-med" aria-hidden="true"></i>   Address Book</h1>
+	<div>
+		<h2>Add a contact:</h2>
+		<form id="form">
+			<p> First name <br><input type='text' id="first_name"></p>
+			<p> Last name * <br><input type='text' id="last_name"></p>
+			<p> Phone number * <br><input type='text' id="phone_number"></p>
+			<p> Street <br><input type='text' id="street"></p>
+			<p> City <br><input type='text' id="city"></p>
+			<p> State <br><input type='text' id="state"></p>
+		</form>
+		<button id="add">Add</button>
+		<ul></ul>
+	</div>
+		
+	<aside id="contactInfo"></aside>
+
 	<script src="https://code.jquery.com/jquery.min.js"></script>	
 	<script type="text/javascript" src="app.js"></script>	
 </body>

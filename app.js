@@ -5,12 +5,12 @@ $(document).ready(function () {
 
 // global variables
 var contacts = [];
-var firstName = $("#First-name");
-var lastName = $("#Last-name");
-var phoneNumber = $("#Phone-number");
-var street = $("#Street");
-var city = $("#City");
-var state = $("#State");
+var firstName = $("#first_name");
+var lastName = $("#last_name");
+var phoneNumber = $("#phone_number");
+var street = $("#street");
+var city = $("#city");
+var state = $("#state");
 
 
 // when click Add, take input values and create new object for contact	
@@ -21,11 +21,13 @@ $("button").click(function() {
 
 // only append if required fields filled out
 function addContact() {
-	var reqFields = lastName.val()!='' && phoneNumber.val()!='';
-	if(reqFields) {
-		var contactName = $("#First-name").val() + " " + $("#Last-name").val();
+	if(lastName.val() !== '' && phoneNumber.val() !== '') {
+		var contactName = firstName.val() + " " + lastName.val();
 		$("ul").append("<li>" + contactName + "</li>");
-		add(firstName, lastName, phoneNumber, street, city, state);
+		$("#contactInfo").append("<h1>" + contactName + "</h1>");
+		$("#contactInfo").append("<p>" + phoneNumber.val() + "</p>");
+		$("#contactInfo").append("<p>" + street.val() + "<br>" + city.val() + ", " + state.val() + "</p>");
+		document.getElementById("form").reset();
 	}
 	else {
 		alert("Please fill out required fields!");
@@ -33,34 +35,11 @@ function addContact() {
 }
 
 
-// store contact in array
-var add = function(firstName, lastName, phoneNumber, street, city, state) {
-	var newContact = {
-		firstName: firstName,
-		lastName: lastName,
-		phoneNumber: phoneNumber,
-		street: street,
-		city: city,
-		state: state,
-	}
-	contacts[contacts.length] = newContact;
-}
-
-
-// when click on any contact, show object in right panel with contact info
-$("li").click(function () {
-	displayContact();		
+// show full contact info when click on any contact name
+$("div ul li").click(function () {
+	$("#contactInfo").empty();
 })
 
-
-function displayContact(contacts) {
-	contacts.firstName,
-	contacts.lastName,
-	contacts.phoneNumber,
-	contacts.street,
-	contacts.city,
-	contacts.state,
-}
 
 
 })
