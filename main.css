@@ -42,8 +42,13 @@ h2 {
 	cursor: pointer;
 	background-color: #E82C0C;
 }
+div ul {
+	padding-left: 0;
+	width: 300px;
+}
 div ul li {
 	list-style: none;
+	margin-bottom: 15px;
 }
 div ul li:hover {
 	cursor: pointer;
