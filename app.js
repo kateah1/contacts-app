@@ -14,49 +14,44 @@ var city = $("#city");
 var state = $("#state");
 
 
-// when click Add, take input values and create new object for contact	
 $("button").click(function() {
-	contacts.push({
-		name: $("input").val(),
-		id: id
-	});
-	addContact();
-})
-
-
-// only append if required fields filled out
-function addContact() {
 	if(lastName.val() !== '' && phoneNumber.val() !== '') {
-		var contactName = firstName.val() + " " + lastName.val();
-		$("ul").append("<li>" + contactName + "</li>");
-		id++;
-		$("input").val("");
+		contacts.push({
+			firstName: firstName.val(),
+			lastName: lastName.val(),
+			phoneNumber: phoneNumber.val(),
+			street: street.val(),
+			city: city.val(),
+			state: state.val(),
+			id: id
+		});	
+		addContact();
 	}
 	else {
 		alert("Please fill out required fields!");
-	}
-}
+	}	
+})
 
 
-// append contact info
-function appendInfo() {
-	var contactName = firstName.val() + " " + lastName.val();
-	$("#contactInfo").append("<h1>" + contactName + "</h1>");
-	$("#contactInfo").append("<p>" + phoneNumber.val() + "</p>");
-	$("#contactInfo").append("<p>" + street.val() + "<br>" + city.val() + ", " + state.val() + "</p>");
+function addContact() {
+		var contactName = firstName.val() + " " + lastName.val();
+		$("ul").append("<li value='" + id + "'>" + contactName + "</li>");
+		id++;
+		$("input").val("");
 }
 
 
 // show full contact info when click on any contact name
-$("div ul li").click(function () {
+$("div ul").on("click", "li", function () {
 	for(var i = 0; i < contacts.length; i++) {
 		if(contacts[i].id === $(this).val()) {
 			$("#contactInfo") ? $("#contactInfo").empty() : '';
-			appendInfo();
+			$("#contactInfo").append("<h1>" + contacts[i].firstName + " " + contacts[i].lastName + "</h1>");
+			$("#contactInfo").append("<p>" + contacts[i].phoneNumber + "</p>");
+			$("#contactInfo").append("<p>" + contacts[i].street + "<br>" + contacts[i].city + ", " + contacts[i].state + "</p>");
 		}
 	}
 })
-
 
 
 })
